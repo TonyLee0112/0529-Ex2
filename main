@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+#include "Cars2.h"
+#include "SUVS3.h"
+#include "Engineer.h"
+int main() {
+	SUV* newSUV = new SUV();
+
+	Engineer engineer;
+
+	cout << "price of newSUV is " << newSUV->price << endl; // public data (well functioned)
+	cout << "Remain_Adblue of newSUV is " << newSUV->Remain_Adblue << endl; // protected data, (Error)
+	cout << "The number of Car keys is " << newSUV->numofkeys << endl; // private data, (Error)
+
+	cout << "The number of wheels are " << engineer.getWheels(newSUV) << endl; // public function, (well functioned)
+	cout << "Percentage of Remain_Adblue is " << engineer.getAdblue(newSUV) << endl; // protected function, (well functioned)
+	cout << "The number of keys are " << engineer.getkeys(newSUV) << endl; // private function, (well functioned)
+
+	delete newSUV;
+	return 0;
+}
